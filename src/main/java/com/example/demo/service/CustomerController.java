@@ -17,15 +17,16 @@ import java.util.List;
 @RequestMapping("/customer")
 public class CustomerController {
     @Autowired
-    private ICustomerDAO customerDAO;
+    public ICustomerDAO customerDAO;
 
     /**
-     * Constructor for CustomerController purely for testing/mocking purposes
+     * Sets the customerDAO to the given customerDAO
      * @param customerDAO
      */
-    public CustomerController(ICustomerDAO customerDAO) {
+    public void setCustomerDAO(ICustomerDAO customerDAO) {
         this.customerDAO = customerDAO;
     }
+
 
     /**
      * Get all customers

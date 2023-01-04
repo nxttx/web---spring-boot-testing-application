@@ -5,11 +5,9 @@ import com.example.demo.domain.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.PreparedStatementSetter;
-
 import java.sql.PreparedStatement;
-import java.sql.SQLException;
 import java.util.List;
+
 @SpringBootApplication
 public class CustomerDAO implements ICustomerDAO {
 
@@ -37,9 +35,6 @@ public class CustomerDAO implements ICustomerDAO {
     public Customer getCustomerById(int customerId) {
         String sql = "SELECT * FROM customers WHERE id = ?";
 
-//        create prepared statement
-
-
         // get the customer and if not found return null
         Customer customer = jdbcTemplate.query(
             sql,
@@ -57,16 +52,19 @@ public class CustomerDAO implements ICustomerDAO {
 
     @Override
     public void addCustomer(Customer customer) {
+        throw new UnsupportedOperationException("Not implemented yet.");
 
     }
 
     @Override
     public void updateCustomer(Customer customer) {
+        throw new UnsupportedOperationException("Not implemented yet.");
 
     }
 
     @Override
     public void deleteCustomer(int customerId) {
+        throw new UnsupportedOperationException("Not implemented yet.");
 
     }
 }
